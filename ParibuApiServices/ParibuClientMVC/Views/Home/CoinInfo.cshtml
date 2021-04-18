@@ -1,0 +1,79 @@
+﻿@model IEnumerable<ParibuClientMVC.Models.Data>
+
+@{
+    ViewData["Title"] = "CoinInfo";
+}
+
+<h1>Coinmarketcap</h1>
+<form asp-controller="Home" asp-action="Search">
+    <p>
+        Symbol: <input type="text" name="symbol" />
+        <input type="submit" value="Search" />
+    </p>
+</form>
+<form asp-controller="Home" asp-action="CoinInfo">
+    <p>      
+        <input type="submit" value="Refresh" />
+    </p>
+</form>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.symbol)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.quote.usd.price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.quote.usd.percentChange24H)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.last_updated)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.symbol)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.quote.usd.price)
+            </td>
+            @{
+                var color = "#fff";
+                if (item.quote.usd.percentChange24H < 0)
+                {
+                    color = "red";
+                }
+                else if (item.quote.usd.percentChange24H > 0)
+                {
+                    color = "green";
+                }
+                else
+                {
+                    color = "gray";
+                }
+            }
+            <td style="color: @color">
+                @Html.DisplayFor(modelItem => item.quote.usd.percentChange24H)
+            </td>
+            <th>
+                @Html.DisplayFor(modelItem => item.last_updated)
+            </th>
+        </tr>
+        }
+    </tbody>
+</table>

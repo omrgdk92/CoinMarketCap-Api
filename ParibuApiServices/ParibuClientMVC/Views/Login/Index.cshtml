@@ -1,0 +1,83 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model ParibuClientMVC.Models.User
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        #login {
+            position: absolute;
+            left: 40%;
+            top: 40%;
+            border: 1px solid #ccc;
+            padding: 10px 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="text-center">
+        <h1 class="display-4">Paribu Login</h1>
+        <div id="login">
+            @using (Html.BeginForm("Autherize", "Login", FormMethod.Post))
+            {
+                <table>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            @Html.LabelFor(model => model.UserName)
+                        </td>
+                        <td>
+                            @Html.EditorFor(model => model.UserName)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                        </td>
+                        <td>
+                            @Html.ValidationMessageFor(model => model.UserName)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            @Html.LabelFor(model => model.Password)
+                        </td>
+                        <td>
+                            @Html.EditorFor(model => model.Password)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                        </td>
+                        <td>
+                            @Html.ValidationMessageFor(model => model.Password)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                        </td>
+                        <td>
+                            <input type="submit" name="Onay" value="Login" />
+                        </td>
+                        <td>
+                        </td>
+                    </tr>
+                </table>
+            }
+
+        </div>
+        <h5 style="color:red;">
+            @Html.ValidationMessage("LogOnError")
+        </h5>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js" type="text/javascript"></script>
+    <script src="~/Scripts/jquery-1.10.2.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.12/jquery.validate.unobtrusive.min.js" integrity="sha512-o6XqxgrUsKmchwy9G5VRNWSSxTS4Urr4loO6/0hYdpWmFUfHqGzawGxeQGMDqYzxjY9sbktPbNlkIQJWagVZQg==" crossorigin="anonymous"></script>
+
+</body>
+</html>
+
