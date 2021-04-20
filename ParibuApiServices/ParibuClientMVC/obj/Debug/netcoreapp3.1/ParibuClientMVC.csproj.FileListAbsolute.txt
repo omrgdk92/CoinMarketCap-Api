@@ -1,9 +1,6 @@
 C:\Users\Omer\source\repos\ParibuApiServices\ParibuClientMVC\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\Users\Omer\source\repos\ParibuApiServices\ParibuClientMVC\bin\Debug\netcoreapp3.1\appsettings.json
-C:\Users\Omer\source\repos\ParibuApiServices\ParibuClientMVC\bin\Debug\netcoreapp3.1\ParibuClientMVC.exe
 C:\Users\Omer\source\repos\ParibuApiServices\ParibuClientMVC\bin\Debug\netcoreapp3.1\ParibuClientMVC.deps.json
-C:\Users\Omer\source\repos\ParibuApiServices\ParibuClientMVC\bin\Debug\netcoreapp3.1\ParibuClientMVC.runtimeconfig.json
-C:\Users\Omer\source\repos\ParibuApiServices\ParibuClientMVC\bin\Debug\netcoreapp3.1\ParibuClientMVC.runtimeconfig.dev.json
 C:\Users\Omer\source\repos\ParibuApiServices\ParibuClientMVC\bin\Debug\netcoreapp3.1\ParibuClientMVC.dll
 C:\Users\Omer\source\repos\ParibuApiServices\ParibuClientMVC\bin\Debug\netcoreapp3.1\ParibuClientMVC.pdb
 C:\Users\Omer\source\repos\ParibuApiServices\ParibuClientMVC\bin\Debug\netcoreapp3.1\ParibuClientMVC.Views.dll
@@ -12,7 +9,6 @@ C:\Users\Omer\source\repos\ParibuApiServices\ParibuClientMVC\obj\Debug\netcoreap
 C:\Users\Omer\source\repos\ParibuApiServices\ParibuClientMVC\obj\Debug\netcoreapp3.1\ParibuClientMVC.AssemblyInfoInputs.cache
 C:\Users\Omer\source\repos\ParibuApiServices\ParibuClientMVC\obj\Debug\netcoreapp3.1\ParibuClientMVC.AssemblyInfo.cs
 C:\Users\Omer\source\repos\ParibuApiServices\ParibuClientMVC\obj\Debug\netcoreapp3.1\ParibuClientMVC.csproj.CoreCompileInputs.cache
-C:\Users\Omer\source\repos\ParibuApiServices\ParibuClientMVC\obj\Debug\netcoreapp3.1\ParibuClientMVC.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Omer\source\repos\ParibuApiServices\ParibuClientMVC\obj\Debug\netcoreapp3.1\ParibuClientMVC.RazorAssemblyInfo.cache
 C:\Users\Omer\source\repos\ParibuApiServices\ParibuClientMVC\obj\Debug\netcoreapp3.1\ParibuClientMVC.RazorAssemblyInfo.cs
 C:\Users\Omer\source\repos\ParibuApiServices\ParibuClientMVC\obj\Debug\netcoreapp3.1\staticwebassets\ParibuClientMVC.StaticWebAssets.Manifest.cache
@@ -34,11 +30,13 @@ C:\Users\Omer\source\repos\ParibuApiServices\ParibuClientMVC\obj\Debug\netcoreap
 C:\Users\Omer\source\repos\ParibuApiServices\ParibuClientMVC\obj\Debug\netcoreapp3.1\ParibuClientMVC.Views.pdb
 C:\Users\Omer\source\repos\ParibuApiServices\ParibuClientMVC\obj\Debug\netcoreapp3.1\ParibuClientMVC.dll
 C:\Users\Omer\source\repos\ParibuApiServices\ParibuClientMVC\obj\Debug\netcoreapp3.1\ParibuClientMVC.pdb
-C:\Users\Omer\source\repos\ParibuApiServices\ParibuClientMVC\obj\Debug\netcoreapp3.1\ParibuClientMVC.genruntimeconfig.cache
 C:\Users\Omer\source\repos\ParibuApiServices\ParibuClientMVC\obj\Debug\netcoreapp3.1\ParibuClientMVC.csproj.CopyComplete
+C:\Users\Omer\source\repos\ParibuApiServices\ParibuClientMVC\obj\Debug\netcoreapp3.1\Razor\Views\Home\CoinInfo.cshtml.g.cs
+C:\Users\Omer\source\repos\ParibuApiServices\ParibuClientMVC\obj\Debug\netcoreapp3.1\Razor\Views\Login\Autherize.cshtml.g.cs
+C:\Users\Omer\source\repos\ParibuApiServices\ParibuClientMVC\bin\Debug\netcoreapp3.1\ParibuClientMVC.exe
+C:\Users\Omer\source\repos\ParibuApiServices\ParibuClientMVC\bin\Debug\netcoreapp3.1\ParibuClientMVC.runtimeconfig.json
+C:\Users\Omer\source\repos\ParibuApiServices\ParibuClientMVC\bin\Debug\netcoreapp3.1\ParibuClientMVC.runtimeconfig.dev.json
 C:\Users\Omer\source\repos\ParibuApiServices\ParibuClientMVC\bin\Debug\netcoreapp3.1\System.Net.Http.Formatting.dll
-C:\Users\Omer\source\repos\ParibuApiServices\ParibuClientMVC\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
-C:\Users\Omer\source\repos\ParibuApiServices\ParibuClientMVC\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
 C:\Users\Omer\source\repos\ParibuApiServices\ParibuClientMVC\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Razor.Language.dll
 C:\Users\Omer\source\repos\ParibuApiServices\ParibuClientMVC\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.dll
 C:\Users\Omer\source\repos\ParibuApiServices\ParibuClientMVC\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.dll
@@ -53,6 +51,8 @@ C:\Users\Omer\source\repos\ParibuApiServices\ParibuClientMVC\bin\Debug\netcoreap
 C:\Users\Omer\source\repos\ParibuApiServices\ParibuClientMVC\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll
 C:\Users\Omer\source\repos\ParibuApiServices\ParibuClientMVC\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
 C:\Users\Omer\source\repos\ParibuApiServices\ParibuClientMVC\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
+C:\Users\Omer\source\repos\ParibuApiServices\ParibuClientMVC\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\Omer\source\repos\ParibuApiServices\ParibuClientMVC\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
 C:\Users\Omer\source\repos\ParibuApiServices\ParibuClientMVC\bin\Debug\netcoreapp3.1\NuGet.Frameworks.dll
 C:\Users\Omer\source\repos\ParibuApiServices\ParibuClientMVC\bin\Debug\netcoreapp3.1\System.Composition.AttributedModel.dll
 C:\Users\Omer\source\repos\ParibuApiServices\ParibuClientMVC\bin\Debug\netcoreapp3.1\System.Composition.Convention.dll
@@ -111,5 +111,5 @@ C:\Users\Omer\source\repos\ParibuApiServices\ParibuClientMVC\bin\Debug\netcoreap
 C:\Users\Omer\source\repos\ParibuApiServices\ParibuClientMVC\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\Omer\source\repos\ParibuApiServices\ParibuClientMVC\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\Omer\source\repos\ParibuApiServices\ParibuClientMVC\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
-C:\Users\Omer\source\repos\ParibuApiServices\ParibuClientMVC\obj\Debug\netcoreapp3.1\Razor\Views\Home\CoinInfo.cshtml.g.cs
-C:\Users\Omer\source\repos\ParibuApiServices\ParibuClientMVC\obj\Debug\netcoreapp3.1\Razor\Views\Login\Autherize.cshtml.g.cs
+C:\Users\Omer\source\repos\ParibuApiServices\ParibuClientMVC\obj\Debug\netcoreapp3.1\ParibuClientMVC.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Omer\source\repos\ParibuApiServices\ParibuClientMVC\obj\Debug\netcoreapp3.1\ParibuClientMVC.genruntimeconfig.cache

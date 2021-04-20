@@ -1,0 +1,2 @@
+﻿Tarih : 20.04.2021 08:34:29 - Hata alınan metod: lambda_method - Hata içeriği : Coinbase servisi çağrılırken hata oluştuTEST
+

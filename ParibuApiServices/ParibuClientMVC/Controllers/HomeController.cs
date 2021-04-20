@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
+using ParibuClientMVC.Helper;
 using ParibuClientMVC.Models;
 using System;
 using System.Collections.Generic;
@@ -23,88 +24,113 @@ namespace ParibuClientMVC.Controllers
 
         public IActionResult Index()
         {
-            Coin coinResult = new Coin();
-
-            using (var client = new HttpClient())
+            try
             {
-                client.BaseAddress = new Uri("https://localhost:44310/api/");
-                //HTTP GET
-                var responseTask = client.GetAsync("coin/2/50");
-                responseTask.Wait();
+                Coin coinResult = new Coin();
 
-                var result = responseTask.Result;
-                if (result.IsSuccessStatusCode)
+                using (var client = new HttpClient())
                 {
-                    var readTask = result.Content.ReadAsAsync<Coin>();
-                    readTask.Wait();                    
-                    coinResult = readTask.Result;
-                }
-                else //web api sent error response 
-                {
-                    //log response status here..
+                    client.BaseAddress = new Uri("https://localhost:44310/api/");
+                    //HTTP GET
+                    var responseTask = client.GetAsync("coin/2/50");
+                    responseTask.Wait();
 
-                   // students = Enumerable.Empty<Coin>();
-
-                    ModelState.AddModelError(string.Empty, "Server error. Please contact administrator.");
+                    var result = responseTask.Result;
+                    if (result.IsSuccessStatusCode)
+                    {
+                        var readTask = result.Content.ReadAsAsync<Coin>();
+                        readTask.Wait();
+                        coinResult = readTask.Result;
+                    }
+                    else
+                    {
+                        LogOperation.InsertLog(new StackTrace().GetFrame(1).GetMethod().Name, string.Concat("Coinbase servisinden response hatalı döndü", result.ReasonPhrase), DateTime.Now);
+                        ModelState.AddModelError(string.Empty, "Coinbase Server error. Please contact administrator.");
+                    }
                 }
+                return View(coinResult);
             }
-            return View(coinResult);
+            catch (Exception ex)
+            {
+                LogOperation.InsertLog(new StackTrace().GetFrame(1).GetMethod().Name, string.Concat("Coinbase servisi çağrılırken hata oluştu", ex.Message), DateTime.Now);
+                return RedirectToAction("Error", "Home");
+            }
+
         }
         public ActionResult CoinInfo()
         {
             Coin coinResult = new Coin();
-
-            using (var client = new HttpClient())
+            try
             {
-                client.BaseAddress = new Uri("https://localhost:44310/api/");                
-                var responseTask = client.GetAsync("coin/2/50");
-                responseTask.Wait();
-
-                var result = responseTask.Result;
-                if (result.IsSuccessStatusCode)
+                using (var client = new HttpClient())
                 {
-                    var readTask = result.Content.ReadAsAsync<Coin>();
-                    readTask.Wait();
-                    coinResult = readTask.Result;
-                    if (coinResult.datas != null)
+                    client.BaseAddress = new Uri("https://localhost:44310/api/");
+                    var responseTask = client.GetAsync("coin/2/50");
+                    responseTask.Wait();
+
+                    var result = responseTask.Result;
+                    if (result.IsSuccessStatusCode)
                     {
-                        coinResult.datas.ForEach(s => s.last_updated = DateTime.Now.ToString());
+                        var readTask = result.Content.ReadAsAsync<Coin>();
+                        readTask.Wait();
+                        coinResult = readTask.Result;
+                        if (coinResult.datas != null)
+                        {
+                            coinResult.datas.ForEach(s => s.last_updated = DateTime.Now.ToString());
+                        }
+                    }
+                    else
+                    {
+                        LogOperation.InsertLog(new StackTrace().GetFrame(1).GetMethod().Name, string.Concat("Coinbase servisinden response hatalı döndü", result.ReasonPhrase), DateTime.Now);
+                        ModelState.AddModelError(string.Empty, "Coinbase Server error. Please contact administrator.");
                     }
                 }
-                else
-                {
-                    ModelState.AddModelError(string.Empty, "Server error. Please contact administrator.");
-                }
+                return View(coinResult.datas);
+
             }
-            return View(coinResult.datas);
+            catch (Exception ex)
+            {
+                LogOperation.InsertLog(new StackTrace().GetFrame(1).GetMethod().Name, string.Concat("Coinbase servisi çağrılırken hata oluştu", ex.Message), DateTime.Now);
+                return RedirectToAction("Error", "Home");
+            }
         }
         public ActionResult Search(string symbol)
         {
             List<Data> coinResult = new List<Data>();
-
-            using (var client = new HttpClient())
+            try
             {
-                client.BaseAddress = new Uri("https://localhost:44310/api/");
-                var responseTask = client.GetAsync("coin/2/5000/"+symbol.ToUpper());
-                responseTask.Wait();
-
-                var result = responseTask.Result;
-                if (result.IsSuccessStatusCode)
+                using (var client = new HttpClient())
                 {
-                    var readTask = result.Content.ReadAsAsync<List<Data>>();
-                    readTask.Wait();
-                    coinResult = readTask.Result;
-                    if (coinResult != null)
+                    client.BaseAddress = new Uri("https://localhost:44310/api/");
+                    var responseTask = client.GetAsync("coin/2/5000/" + symbol.ToUpper());
+                    responseTask.Wait();
+
+                    var result = responseTask.Result;
+                    if (result.IsSuccessStatusCode)
                     {
-                        coinResult.ForEach(s => s.last_updated = DateTime.Now.ToString());
+                        var readTask = result.Content.ReadAsAsync<List<Data>>();
+                        readTask.Wait();
+                        coinResult = readTask.Result;
+                        if (coinResult != null)
+                        {
+                            coinResult.ForEach(s => s.last_updated = DateTime.Now.ToString());
+                        }
+                    }
+                    else
+                    {
+                        LogOperation.InsertLog(new StackTrace().GetFrame(1).GetMethod().Name, string.Concat("Coinbase servisinden response hatalı döndü", result.ReasonPhrase), DateTime.Now);
+                        ModelState.AddModelError(string.Empty, "Coinbase Server error. Please contact administrator.");
                     }
                 }
-                else
-                {
-                    ModelState.AddModelError(string.Empty, "Server error. Please contact administrator.");
-                }
+                return View("CoinInfo", coinResult);
             }
-            return View("CoinInfo", coinResult);
+            catch (Exception ex)
+            {
+                LogOperation.InsertLog(new StackTrace().GetFrame(1).GetMethod().Name, string.Concat("Coinbase servisi çağrılırken hata oluştu", ex.Message), DateTime.Now);
+                return RedirectToAction("Error", "Home");
+            }
+
+           
         }
 
         public IActionResult Privacy()

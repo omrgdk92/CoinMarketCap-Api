@@ -24,10 +24,21 @@ namespace ParibuApiServices.Controllers
         [HttpPost("authenticate")]
         public IActionResult Authenticate(User model)
         {
-            var response = _userService.Authenticate(model);
+            string response = string.Empty;
+            try
+            {
+                response = _userService.Authenticate(model);
 
-            if (response == null)
-                return BadRequest(new { message = "Username or password is incorrect" });
+                if (string.IsNullOrEmpty(response))
+                {
+                    LogOperation.InsertLog("User/Authenticate", string.Format("Hatalı login işlemi : Username - {0} - Password - {1}",model.UserName,model.Password), DateTime.Now);
+                    return BadRequest(new { message = "Username or password is incorrect" });
+                }
+            }
+            catch (Exception ex)
+            {
+                LogOperation.InsertLog("User/Authenticate", string.Format("Authenticate metodunda hata alındı : {0}", ex.Message), DateTime.Now);
+            }   
 
             return Ok(response);
         }

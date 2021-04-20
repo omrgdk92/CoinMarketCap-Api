@@ -4,6 +4,7 @@ using ParibuApiServices.ModelData;
 using ParibuApiServices.Models;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
@@ -26,12 +27,30 @@ namespace ParibuApiServices.Controllers
         [HttpGet("{fiattype}/{maxsize}")]// GET /api/coin
         public IActionResult GetCoinList(FiatType fiatType, int maxSize)
         {
-            return Ok(_coinData.GetCoinList(fiatType, maxSize));
+            try
+            {
+                return Ok(_coinData.GetCoinList(fiatType, maxSize));
+            }
+            catch (Exception ex)
+            {
+                LogOperation.InsertLog("Coin/GetCoinList", string.Concat("Coinbase servisi çağrılırken hata oluştu",ex.Message),DateTime.Now);
+                return NotFound(ex.Message);
+            }
+            
         }
         [HttpGet("{fiattype}/{maxsize}/{symbol}")]// GET /api/coin
         public IActionResult GetCoinBySymbol(string symbol)
         {
-            return Ok(_coinData.GetCoinList(FiatType.USD).Datas.Where(x=> x.Symbol==symbol));
+            try
+            {
+                return Ok(_coinData.GetCoinList(FiatType.USD).Datas.Where(x => x.Symbol == symbol));
+            }
+            catch (Exception ex)
+            {
+                LogOperation.InsertLog("Coin/GetCoinBySymbol", string.Concat("Coinbase servisi çağrılırken hata oluştu", ex.Message), DateTime.Now);
+                return NotFound(ex.Message);
+            }
+            
         }
     }
 }
